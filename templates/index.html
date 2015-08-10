@@ -1,28 +1,28 @@
 <!doctype html>
 <html>
-	<head>
-		<script src="static/lib/jquery.js"></script>
-		<script src="static/lib/lodash.js"></script>
-		<script src="static/lib/backbone.js"></script>
-		<script src="static/lib/backbone.marionette.js"></script>
-		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-		
-	</head>
-	<body>
-	    <script type="text/template" id="entry-template">
-		<!-- <li id="entry-name"> <%- name %></li> -->
-		<%- name %>
-	    </script>
-	    <script type="text/template" id="list-template">
-		<!-- <div id="list-name"></div> -->
-		<ul id="sublist"></ul>
-		<input type="text" id="new-entry-name" />
-		<input type="submit" id="add-new-entry" value="Add" />
-	    </script>
-	    <div id="wrapper">
-		List
-		<div id="list"></div>
-	    </div>
-	    <script src="static/app.js"></script>
-	</body>
+    <head>
+	<script src="static/lib/jquery.js"></script>
+	<script src="static/lib/lodash.js"></script>
+	<script src="static/lib/backbone.js"></script>
+	<script src="static/lib/backbone.marionette.js"></script>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	
+    </head>
+    <body>
+	<script type="text/template" id="entry-template">
+	    <!-- <li id="entry-name"> <%- name %></li> -->
+	    <div id="entry-name"><%- name%></div>
+	</script>
+	<script type="text/template" id="list-template">
+	    <!-- <div id="list-name"></div> -->
+	    <ul id="sublist"></ul>
+	    <input type="text" id="new-entry-name" />
+	    <input type="submit" id="add-new-entry" value="Add" />
+	</script>
+	<div id="wrapper">
+	    List
+	    <div id="list"></div>
+	</div>
+	<script src="static/app.js"></script>
+    </body>
 </html>
