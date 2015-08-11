@@ -23,15 +23,16 @@ def createTable(tablename, attr):
     print ("CREATE TABLE %s(%s)") % (tablename, s)
 
 def createTables():
-    createTable('entries', [('name','text')])
+    createTable('entries', [('name','text'),('parentID','integer')])
 
 def dropTables():
     dropTable('entries')
 
-def addEntry(name):
+def addEntry(name, parentID=0):
     conn = sqlite3.connect('data.db')
     c = conn.cursor()
-    c.execute("INSERT INTO entries VALUES ('%s')" %(name))
+    t = (name,parentID)
+    c.execute("INSERT INTO entries VALUES (?,?)",t)
     conn.commit()
     print "added %s to entries" %(name)
     return True
@@ -51,7 +52,7 @@ def getEntries():
     c = conn.cursor()
     entries = []
     for row in c.execute('SELECT rowid,* FROM entries'):
-        entries.append({"id":row[0], "name":row[1]})
+        entries.append({"id":row[0], "name":row[1], "parentID":row[2]})
     print 'entries: '+`entries`
     return entries
 

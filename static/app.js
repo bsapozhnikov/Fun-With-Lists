@@ -26,10 +26,10 @@ var List = Backbone.Collection.extend({
 
 App.EntryView = Marionette.ItemView.extend({
     template: "#entry-template",
-    tagName: "li",
+    tagName: "ul",
     events: {
-	'click #entry-name': function(){
-	    var name = $('#entry-name').replaceWith('<input type="text" id="edit-entry-name" />');
+	'click #entry-name': function(e){
+	    var name = $(e.target).replaceWith('<input type="text" id="edit-entry-name" />');
 	    $('#edit-entry-name').val(name.text()).focus();
 	},
 	'blur #edit-entry-name' : function(){
